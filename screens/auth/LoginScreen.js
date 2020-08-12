@@ -11,7 +11,6 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
   Dimensions,
-  Button,
 } from "react-native";
 
 const initialState = {
