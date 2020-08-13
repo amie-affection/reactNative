@@ -16,13 +16,16 @@ const CreateScreen = ({ navigation }) => {
     // const photo = await camera.takePictureAsync();
     // console.log(photo.uri);
     const location = await Location.getCurrentPositionAsync();
+    console.log("location", location.coords.latitude);
+    console.log("location", location.coords.longitude);
+
     // setPhoto(photo.uri);
-    // console.log(photo);
+    // console.log('photo', photo);
   };
 
   const sendPhoto = () => {
     console.log("navigation", navigation);
-    navigation.navigate("Posts", { photo });
+    navigation.navigate("DefaultScreen", { photo });
   };
 
   return (
