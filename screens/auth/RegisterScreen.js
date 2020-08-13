@@ -63,7 +63,7 @@ export default function RegisterScreen({ navigation }) {
                 width: dimensions,
               }}
             >
-              <View style={styles.innerBox}>
+              <View>
                 <Text style={styles.text}>Welcome!</Text>
               </View>
 
@@ -135,7 +135,6 @@ export default function RegisterScreen({ navigation }) {
                       color: "#006400",
                       fontWeight: "bold",
                       textAlign: "center",
-                      marginLeft: 10,
                     }}
                   >
                     Sign In
@@ -166,17 +165,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 10,
     backgroundColor: "white",
-  },
-  innerBox: {
-    borderWidth: 3,
+    marginTop: 10,
     marginBottom: 10,
-    marginTop: 30,
-    borderColor: "blue",
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingLeft: 40,
-    paddingRight: 40,
-    borderRadius: 10,
   },
   image: {
     flex: 1,
@@ -196,7 +186,7 @@ const styles = StyleSheet.create({
   inputTitle: {
     marginTop: 10,
     marginBottom: 10,
-    fontSize: 18,
+    fontSize: 16,
   },
   btn: {
     borderRadius: 6,

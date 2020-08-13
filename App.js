@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import {} from "react-native";
-import { AppLoading } from "expo";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
-import LoginScreen from "./screens/auth/LoginScreen";
-import RegisterScreen from "./screens/auth/RegisterScreen";
 
-const AuthStack = createStackNavigator();
+import { AppLoading } from "expo";
+
+import { NavigationContainer } from "@react-navigation/native";
+
+import { useRoute } from "./router";
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
+  const routing = useRoute(true);
 
   if (isReady) {
     return (
@@ -21,24 +21,5 @@ export default function App() {
     );
   }
 
-  return (
-    <NavigationContainer>
-      <AuthStack.Navigator>
-        <AuthStack.Screen
-          options={{
-            headerShown: false,
-          }}
-          name="Login"
-          component={LoginScreen}
-        />
-        <AuthStack.Screen
-          options={{
-            headerShown: false,
-          }}
-          name="Register"
-          component={RegisterScreen}
-        />
-      </AuthStack.Navigator>
-    </NavigationContainer>
-  );
+  return <NavigationContainer>{routing}</NavigationContainer>;
 }
